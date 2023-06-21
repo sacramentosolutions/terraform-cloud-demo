@@ -1,5 +1,5 @@
 
-# Pulls Subnet Information
+#  Pulls Subnet information
 data "terraform_remote_state" "vpc" {
   backend = "remote"
 
@@ -10,6 +10,8 @@ data "terraform_remote_state" "vpc" {
     }
   }
 }
+
+
 
 
 # Finds Ubuntu AMI 
@@ -25,5 +27,6 @@ data "aws_ami" "ubuntu" {
     name   = "virtualization-type"
     values = ["hvm"]
   }
+
   owners = ["099720109477"] # Canonical
 }
