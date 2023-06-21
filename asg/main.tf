@@ -91,14 +91,3 @@ resource "aws_elb" "bar" {
   connection_draining_timeout = 400
 
 }
-
-
-
-
-resource "aws_route53_record" "blog" {
-  zone_id = Z07514132F2Y56609XF1W
-  name    = "blog"
-  type    = "CNAME"
-  ttl     = 5
-  records        = [aws_elb.bar.dns_name]
-}
