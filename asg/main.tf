@@ -100,6 +100,5 @@ resource "aws_route53_record" "blog" {
   name    = "blog"
   type    = "CNAME"
   ttl     = 5
-
   records        = [aws_elb.bar.dns_name]
 }
